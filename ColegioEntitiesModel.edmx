@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ColegioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ColegioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Alumnos">
           <Key>
             <PropertyRef Name="id" />
@@ -30,7 +30,8 @@
           <EntitySet Name="Alumnos" EntityType="Self.Alumnos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Profesores" EntityType="Self.Profesores" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ColegioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -45,10 +46,6 @@
           <Property Name="fnac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="sexo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="ColegioEntities2" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Alumnos" EntityType="Self.Alumnos" />
-          <EntitySet Name="Profesores" EntityType="ColegioModel.Profesores" />
-        </EntityContainer>
         <EntityType Name="Profesores">
           <Key>
             <PropertyRef Name="ID" />
@@ -59,12 +56,16 @@
           <Property Name="fingreso" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="titulacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityContainer Name="ColegioEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Alumnos" EntityType="Self.Alumnos" />
+          <EntitySet Name="Profesores" EntityType="Self.Profesores" />
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ColegioModelStoreContainer" CdmEntityContainer="ColegioEntities2">
+        <EntityContainerMapping StorageEntityContainer="ColegioModelStoreContainer" CdmEntityContainer="ColegioEntities3">
           <EntitySetMapping Name="Alumnos">
             <EntityTypeMapping TypeName="ColegioModel.Alumnos">
               <MappingFragment StoreEntitySet="Alumnos">
@@ -80,11 +81,11 @@
           <EntitySetMapping Name="Profesores">
             <EntityTypeMapping TypeName="ColegioModel.Profesores">
               <MappingFragment StoreEntitySet="Profesores">
-                <ScalarProperty Name="titulacion" ColumnName="titulacion" />
-                <ScalarProperty Name="fingreso" ColumnName="fingreso" />
-                <ScalarProperty Name="apellido" ColumnName="apellido" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellido" ColumnName="apellido" />
+                <ScalarProperty Name="fingreso" ColumnName="fingreso" />
+                <ScalarProperty Name="titulacion" ColumnName="titulacion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

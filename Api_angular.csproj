@@ -130,23 +130,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alumnos.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Alumnos.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="Alumnos.cs">
-      <DependentUpon>Alumnos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Alumnos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Alumnos.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Alumnos1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Alumnos.tt</DependentUpon>
+      <DependentUpon>ColegioEntitiesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -180,26 +165,45 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="ColegioEntitiesModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColegioEntitiesModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ColegioEntitiesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColegioEntitiesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ColegioEntitiesModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ColegioEntitiesModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ProfesorController.cs" />
     <Compile Include="Controllers\AlumnoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Profesores.cs">
+      <DependentUpon>ColegioEntitiesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Alumnos.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Alumnos.edmx</DependentUpon>
-      <LastGenOutput>Alumnos.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Alumnos.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Alumnos.edmx</DependentUpon>
-      <LastGenOutput>Alumnos1.cs</LastGenOutput>
-    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="ColegioEntitiesModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ColegioEntitiesModel.edmx</DependentUpon>
+      <LastGenOutput>ColegioEntitiesModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ColegioEntitiesModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ColegioEntitiesModel.edmx</DependentUpon>
+      <LastGenOutput>ColegioEntitiesModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -228,12 +232,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="Alumnos.edmx">
+    <EntityDeploy Include="ColegioEntitiesModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Alumnos.Designer.cs</LastGenOutput>
+      <LastGenOutput>ColegioEntitiesModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Alumnos.edmx.diagram">
-      <DependentUpon>Alumnos.edmx</DependentUpon>
+    <Content Include="ColegioEntitiesModel.edmx.diagram">
+      <DependentUpon>ColegioEntitiesModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

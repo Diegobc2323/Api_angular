@@ -13,10 +13,10 @@ namespace Api_angular
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ColegioEntities2 : DbContext
+    public partial class ColegioEntities3 : DbContext
     {
-        public ColegioEntities2()
-            : base("name=ColegioEntities2")
+        public ColegioEntities3()
+            : base("name=ColegioEntities3")
         {
         }
     

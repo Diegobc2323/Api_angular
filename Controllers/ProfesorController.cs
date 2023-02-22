@@ -11,17 +11,17 @@ namespace Api_angular.Controllers
     {
         public IEnumerable<Profesores> Get()
         {
-            using (ColegioEntities2 entities2 = new ColegioEntities2())
+            using (ColegioEntities3 entities = new ColegioEntities3())
             {
-                return entities2.Profesores.ToList();
+                return entities.Profesores.ToList();
             }
         }
 
         public Profesores Get(int id)
         {
-            using (ColegioEntities2 entities2 = new ColegioEntities2())
+            using (ColegioEntities3 entities = new ColegioEntities3())
             {
-                return entities2.Profesores.FirstOrDefault(p=> p.ID == id);
+                return entities.Profesores.FirstOrDefault(p=> p.ID == id);
             }
         }
 
